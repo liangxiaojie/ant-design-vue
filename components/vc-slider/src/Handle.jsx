@@ -10,6 +10,7 @@ export default {
   props: {
     prefixCls: PropTypes.string,
     vertical: PropTypes.bool,
+    verticalInvert: PropTypes.bool,
     offset: PropTypes.number,
     disabled: PropTypes.bool,
     min: PropTypes.number,
@@ -68,14 +69,14 @@ export default {
     },
   },
   render() {
-    const { prefixCls, vertical, offset, disabled, min, max, value, tabIndex } = getOptionProps(
+    const { prefixCls, vertical, verticalInvert, offset, disabled, min, max, value, tabIndex } = getOptionProps(
       this,
     );
     const className = classNames(this.$props.className, {
       [`${prefixCls}-handle-click-focused`]: this.clickFocused,
     });
 
-    const postionStyle = vertical ? { bottom: `${offset}%` } : { left: `${offset}%` };
+    const postionStyle = vertical ? (verticalInvert ? { top: `${offset}%` } : { bottom: `${offset}%` }) : { left: `${offset}%` };
 
     const ariaProps = {
       'aria-valuemin': min,

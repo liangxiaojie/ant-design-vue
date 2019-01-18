@@ -2,14 +2,17 @@
 const Track = {
   functional: true,
   render(createElement, context) {
-    const { included, vertical, offset, length } = context.props;
+    const { included, vertical, verticalInvert, offset, length } = context.props;
     const { style, class: className } = context.data;
 
     const positonStyle = vertical
-      ? {
+      ? (verticalInvert ? {
+          top: `${offset}%`,
+          height: `${length}%`,
+        } : {
           bottom: `${offset}%`,
           height: `${length}%`,
-        }
+        })
       : {
           left: `${offset}%`,
           width: `${length}%`,

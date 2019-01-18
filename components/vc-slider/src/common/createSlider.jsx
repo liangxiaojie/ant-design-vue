@@ -23,6 +23,7 @@ export default function createSlider(Component) {
     handle: PropTypes.func,
     dots: PropTypes.bool,
     vertical: PropTypes.bool,
+    verticalInvert: PropTypes.bool,
     minimumTrackStyle: PropTypes.object, // just for compatibility, will be deperecate
     maximumTrackStyle: PropTypes.object, // just for compatibility, will be deperecate
     handleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.object)]),
@@ -62,6 +63,7 @@ export default function createSlider(Component) {
       disabled: false,
       dots: false,
       vertical: false,
+      verticalInvert: false,
       trackStyle: [{}],
       handleStyle: [{}],
       railStyle: {},
@@ -241,9 +243,9 @@ export default function createSlider(Component) {
         }
       },
       calcValue(offset) {
-        const { vertical, min, max } = this;
+        const { vertical, verticalInvert, min, max } = this;
         const ratio = Math.abs(Math.max(offset, 0) / this.getSliderLength());
-        const value = vertical ? (1 - ratio) * (max - min) + min : ratio * (max - min) + min;
+        const value = (vertical && !verticalInvert) ? (1 - ratio) * (max - min) + min : ratio * (max - min) + min;
         return value;
       },
       calcValueByPos(position) {

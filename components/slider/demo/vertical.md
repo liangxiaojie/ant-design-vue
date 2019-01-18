@@ -15,6 +15,9 @@ The vertical Slider.
       <a-slider vertical :defaultValue="30" />
     </div>
     <div style="float:left;height: 300px;marginLeft: 70px">
+      <a-slider vertical verticalInvert :defaultValue="30" />
+    </div>
+    <div style="float:left;height: 300px;marginLeft: 70px">
       <a-slider vertical range :step="10" :defaultValue="[20, 50]" />
     </div>
     <div style="float:left;height: 300px;marginLeft: 70px">

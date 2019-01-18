@@ -31,6 +31,7 @@ export const SliderProps = () => ({
   included: PropTypes.bool,
   disabled: PropTypes.bool,
   vertical: PropTypes.bool,
+  verticalInvert: PropTypes.bool,
   tipFormatter: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   tooltipVisible: PropTypes.bool,
 });

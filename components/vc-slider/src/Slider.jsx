@@ -140,11 +140,12 @@ const Slider = {
       const val = utils.ensureValueInRange(v, mergedProps);
       return utils.ensureValuePrecision(val, mergedProps);
     },
-    getTrack({ prefixCls, vertical, included, offset, minimumTrackStyle, _trackStyle }) {
+    getTrack({ prefixCls, vertical, verticalInvert, included, offset, minimumTrackStyle, _trackStyle }) {
       return (
         <Track
           class={`${prefixCls}-track`}
           vertical={vertical}
+          verticalInvert={verticalInvert}
           included={included}
           offset={0}
           length={offset}
@@ -159,6 +160,7 @@ const Slider = {
       const {
         prefixCls,
         vertical,
+        verticalInvert,
         included,
         disabled,
         minimumTrackStyle,
@@ -177,6 +179,7 @@ const Slider = {
         className: `${prefixCls}-handle`,
         prefixCls,
         vertical,
+        verticalInvert,
         offset,
         value: sValue,
         dragging,
@@ -203,6 +206,7 @@ const Slider = {
         tracks: this.getTrack({
           prefixCls,
           vertical,
+          verticalInvert,
           included,
           offset,
           minimumTrackStyle,

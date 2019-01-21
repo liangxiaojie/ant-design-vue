@@ -25,6 +25,7 @@ const Steps = {
     const {
       prefixCls,
       vertical,
+      verticalInvert,
       marks,
       dots,
       step,
@@ -43,7 +44,7 @@ const Steps = {
       const isActived =
         (!included && point === upperBound) ||
         (included && point <= upperBound && point >= lowerBound);
-      let style = vertical ? { bottom: offset, ...dotStyle } : { left: offset, ...dotStyle };
+      let style = vertical ? (verticalInvert ? { top: offset, ...dotStyle } : { bottom: offset, ...dotStyle }) : { left: offset, ...dotStyle };
       if (isActived) {
         style = { ...style, ...activeDotStyle };
       }

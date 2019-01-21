@@ -6,6 +6,7 @@ import TipFormatter from './tip-formatter.md';
 import Event from './event.md';
 import Mark from './mark.md';
 import Vertical from './vertical.md';
+import VerticalInvert from './verticalInvert.md';
 import ShowTooltip from './show-tooltip.md';
 import CN from '../index.zh-CN.md';
 import US from '../index.en-US.md';
@@ -39,6 +40,7 @@ export default {
         <Event />
         <Mark />
         <Vertical />
+        <VerticalInvert />
         <ShowTooltip />
         <api>
           <template slot='cn'>

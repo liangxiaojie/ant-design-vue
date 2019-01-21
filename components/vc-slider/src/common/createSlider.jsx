@@ -271,6 +271,7 @@ export default function createSlider(Component) {
         included,
         disabled,
         vertical,
+        verticalInvert,
         min,
         max,
         maximumTrackStyle,
@@ -288,6 +289,7 @@ export default function createSlider(Component) {
       const markProps = {
         props: {
           vertical,
+          verticalInvert,
           marks,
           included,
           lowerBound: this.getLowerBound(),
@@ -323,6 +325,7 @@ export default function createSlider(Component) {
           <Steps
             prefixCls={prefixCls}
             vertical={vertical}
+            verticalInvert={verticalInvert}
             marks={marks}
             dots={dots}
             step={step}

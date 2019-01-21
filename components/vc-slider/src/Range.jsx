@@ -307,7 +307,7 @@ const Range = {
       /* eslint-enable eqeqeq */
       return val;
     },
-    getTrack({ bounds, prefixCls, vertical, included, offsets, trackStyle }) {
+    getTrack({ bounds, prefixCls, vertical, verticalInvert, included, offsets, trackStyle }) {
       return bounds.slice(0, -1).map((_, index) => {
         const i = index + 1;
         const trackClassName = classNames({
@@ -318,6 +318,7 @@ const Range = {
           <Track
             class={trackClassName}
             vertical={vertical}
+            verticalInvert={verticalInvert}
             included={included}
             offset={offsets[i - 1]}
             length={offsets[i] - offsets[i - 1]}
@@ -333,6 +334,7 @@ const Range = {
         bounds,
         prefixCls,
         vertical,
+        verticalInvert,
         included,
         disabled,
         min,
@@ -355,6 +357,7 @@ const Range = {
           }),
           prefixCls,
           vertical,
+          verticalInvert,
           offset: offsets[i],
           value: v,
           dragging: sHandle === i,
@@ -378,7 +381,7 @@ const Range = {
       );
 
       return {
-        tracks: this.getTrack({ bounds, prefixCls, vertical, included, offsets, trackStyle }),
+        tracks: this.getTrack({ bounds, prefixCls, vertical, verticalInvert, included, offsets, trackStyle }),
         handles,
       };
     },

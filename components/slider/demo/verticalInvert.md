@@ -1,24 +1,24 @@
 <cn>
-#### 垂直
-垂直方向的 Slider。
+#### 反向垂直
+反向垂直方向的 Slider。
 </cn>
 
 <us>
-#### Vertical
-The vertical Slider.
+#### Invert Vertical
+The invert vertical Slider.
 </us>
 
 ```html
 <template>
   <div style="height: 300px">
     <div style="float:left;height: 300px;marginLeft: 70px">
-      <a-slider vertical :defaultValue="30" />
+      <a-slider vertical verticalInvert :defaultValue="30" />
     </div>
     <div style="float:left;height: 300px;marginLeft: 70px">
-      <a-slider vertical range :step="10" :defaultValue="[20, 50]" />
+      <a-slider vertical verticalInvert range :step="10" :defaultValue="[20, 50]" />
     </div>
     <div style="float:left;height: 300px;marginLeft: 70px">
-      <a-slider vertical range :marks="marks" :defaultValue="[26, 37]" />
+      <a-slider vertical verticalInvert range :marks="marks" :defaultValue="[20, 60]" />
     </div>
   </div>
 </template>
@@ -27,14 +27,16 @@ export default {
   data() {
     return {
       marks: {
-        0: '0°C',
-        26: '26°C',
-        37: '37°C',
+        0: '0',
+        20: '20%',
+        40: '40%',
+        60: '60%',
+        80: '80%',
         100: {
           style: {
             color: '#f50',
           },
-          label: <strong>100°C</strong>,
+          label: <strong>100%</strong>,
         },
       },
     }

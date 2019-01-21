@@ -7,6 +7,7 @@ const Marks = {
     const {
       className,
       vertical,
+      verticalInvert,
       marks,
       included,
       upperBound,
@@ -40,7 +41,10 @@ const Marks = {
           [`${className}-text-active`]: isActive,
         });
 
-        const bottomStyle = {
+        const bottomStyle = verticalInvert ? {
+          marginTop: '-50%',
+          top: `${((point - min) / range) * 100}%`,
+        } : {
           marginBottom: '-50%',
           bottom: `${((point - min) / range) * 100}%`,
         };

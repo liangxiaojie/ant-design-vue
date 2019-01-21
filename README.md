@@ -54,11 +54,11 @@ English | [简体中文](./README-zh_CN.md) | [官网国内镜像](http://tangji
 **We recommend using npm or yarn to install**，it not only makes development easier，but also allow you to take advantage of the rich ecosystem of Javascript packages and tooling.
 
 ```bash
-$ npm install ant-design-vue --save
+$ npm install @jack0/ant-design-vue --save
 ```
 
 ```bash
-$ yarn add ant-design-vue
+$ yarn add @jack0/ant-design-vue
 ```
 
 If you are in a bad network environment，you can try other registries and tools like [cnpm](https://github.com/cnpm/cnpm).
